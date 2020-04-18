@@ -1,4 +1,4 @@
-extends Pickup;
+extends FoodPickup;
 class_name BucketPickup
 
 var isFull = false;
@@ -10,3 +10,12 @@ func _process(delta):
 		texture = TEX_FULL;
 	else:
 		texture = TEX_EMPTY;
+
+func can_give():
+	return isFull;
+
+func on_eaten():
+	isFull = false;
+	
+func get_food():
+	return FoodTypes.WATER;

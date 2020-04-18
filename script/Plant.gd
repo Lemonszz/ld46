@@ -41,6 +41,7 @@ func _on_Area2D_body_entered(body):
 		return;
 	
 	var pickup = Global.player.pickup;
-	if(pickup is BucketPickup && pickup.isFull):
-		pickup.isFull = false;
-		feed(FoodTypes.WATER);
+	if(pickup is FoodPickup):
+		if(pickup.can_give()):
+			if(feed(pickup.get_food())):
+				pickup.on_eaten();
