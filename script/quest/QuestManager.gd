@@ -4,6 +4,7 @@ var WATER_QUEST : Quest = WaterQuest.new();
 var RAT_QUEST : Quest = RatQuest.new();
 var CHICKEN_QUEST : Quest = ChickenQuest.new();
 var CAT_QUEST : Quest = CatQuest.new();
+var DOG_QUEST : Quest = DogQuest.new();
 
 var current = null;
 
