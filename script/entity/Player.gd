@@ -6,7 +6,7 @@ var pickupDelay = 0;
 
 func _ready():
 	Global.player = self;
-	pass;
+	QuestManager.start();
 	
 func _process(delta):
 	pickupDelay -= delta;

@@ -16,6 +16,7 @@ func can_give():
 
 func on_eaten():
 	isFull = false;
+	QuestManager.complete(QuestManager.WATER_QUEST);
 	
 func get_food():
 	return FoodTypes.WATER;
