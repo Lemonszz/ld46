@@ -59,3 +59,8 @@ func _on_Area2D_body_exited(body):
 	if(body is Player):
 		restrict = true;
 
+func on_eaten():
+	queue_free();
+	QuestManager.complete(QuestManager.CHICKEN_QUEST);
+	if(Global.player.pickup == self):
+		Global.player.pickup = null;

@@ -2,6 +2,7 @@ extends Node
 
 var WATER_QUEST : Quest = WaterQuest.new();
 var RAT_QUEST : Quest = RatQuest.new();
+var CHICKEN_QUEST : Quest = ChickenQuest.new();
 
 var current = null;
 
@@ -18,7 +19,6 @@ func complete(quest : Quest):
 func quest_change(oldQuest : Quest, newQuest : Quest):
 	for i in range(Global.player.get_parent().get_node("ui").get_children().size()):
 		var n = Global.player.get_parent().get_node("ui").get_child(i);
-
 		if(n.is_in_group("quest_info")):
 			n.leave();
 
