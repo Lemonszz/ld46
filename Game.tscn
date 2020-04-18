@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/Plant.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://objects/BucketPickup.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/Well.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/Smoke.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/RatPickup.tscn" type="PackedScene" id=7]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Grass"
@@ -59,3 +60,6 @@ position = Vector2( -8.92484, 12.6661 )
 
 [node name="Smoke2" parent="." instance=ExtResource( 6 )]
 position = Vector2( -3.52732, 14.0797 )
+
+[node name="Pickup2" parent="." instance=ExtResource( 7 )]
+position = Vector2( -27.5591, 27.445 )

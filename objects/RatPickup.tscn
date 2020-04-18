@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/rat/rat3.png" type="Texture" id=1]
+[ext_resource path="res://assets/rat/rat4.png" type="Texture" id=2]
+[ext_resource path="res://assets/rat/rat1.png" type="Texture" id=3]
+[ext_resource path="res://assets/rat/rat5.png" type="Texture" id=4]
+[ext_resource path="res://assets/rat/rat2.png" type="Texture" id=5]
+[ext_resource path="res://script/pickup/RatPickup.gd" type="Script" id=6]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 6.35884
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[node name="Pickup" type="Sprite"]
+position = Vector2( -0.032259, 0.135908 )
+script = ExtResource( 6 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 3 )
+frame = 3
+playing = true
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
