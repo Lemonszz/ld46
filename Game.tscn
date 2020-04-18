@@ -2,7 +2,7 @@
 
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/Plant.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/tiles.png" type="Texture" id=3]
+[ext_resource path="res://assets/tile/tiles.png" type="Texture" id=3]
 [ext_resource path="res://objects/BucketPickup.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/Well.tscn" type="PackedScene" id=5]
 
@@ -45,8 +45,8 @@ zoom = Vector2( 0.15, 0.15 )
 [node name="Plant" parent="." instance=ExtResource( 2 )]
 position = Vector2( 36.1313, 18.1235 )
 
-[node name="Pickup" parent="." instance=ExtResource( 4 )]
-position = Vector2( -31.6696, 1.8205 )
-
 [node name="Well" parent="." instance=ExtResource( 5 )]
 position = Vector2( -54.0441, -25.0313 )
+
+[node name="Pickup" parent="." instance=ExtResource( 4 )]
+position = Vector2( -20.8898, 9.68006 )

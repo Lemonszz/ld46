@@ -1,16 +1,16 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://assets/guntharstanding3.png" type="Texture" id=1]
-[ext_resource path="res://script/Player.gd" type="Script" id=2]
-[ext_resource path="res://assets/guntharmovarmsupes1.png" type="Texture" id=3]
-[ext_resource path="res://assets/guntharmovarmsupes2.png" type="Texture" id=4]
-[ext_resource path="res://assets/guntharmoves2.png" type="Texture" id=5]
-[ext_resource path="res://assets/guntharmoves1.png" type="Texture" id=6]
-[ext_resource path="res://assets/guntharstanding1.png" type="Texture" id=7]
-[ext_resource path="res://assets/guntharstandingarmsup2.png" type="Texture" id=8]
-[ext_resource path="res://assets/guntharstanding2.png" type="Texture" id=9]
-[ext_resource path="res://assets/guntharstandingarmsup3.png" type="Texture" id=10]
-[ext_resource path="res://assets/guntharstandingarmsup1.png" type="Texture" id=11]
+[ext_resource path="res://assets/gunther/guntharstanding3.png" type="Texture" id=1]
+[ext_resource path="res://script/entity/Player.gd" type="Script" id=2]
+[ext_resource path="res://assets/gunther/guntharmovarmsupes1.png" type="Texture" id=3]
+[ext_resource path="res://assets/gunther/guntharmovarmsupes2.png" type="Texture" id=4]
+[ext_resource path="res://assets/gunther/guntharmoves2.png" type="Texture" id=5]
+[ext_resource path="res://assets/gunther/guntharmoves1.png" type="Texture" id=6]
+[ext_resource path="res://assets/gunther/guntharstanding1.png" type="Texture" id=7]
+[ext_resource path="res://assets/gunther/guntharstandingarmsup2.png" type="Texture" id=8]
+[ext_resource path="res://assets/gunther/guntharstanding2.png" type="Texture" id=9]
+[ext_resource path="res://assets/gunther/guntharstandingarmsup3.png" type="Texture" id=10]
+[ext_resource path="res://assets/gunther/guntharstandingarmsup1.png" type="Texture" id=11]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 2.46564
@@ -49,4 +49,5 @@ shape = SubResource( 1 )
 position = Vector2( -0.178616, -0.476309 )
 frames = SubResource( 2 )
 animation = "Stand"
+frame = 2
 playing = true

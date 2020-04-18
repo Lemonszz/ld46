@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://assets/smallplant1.png" type="Texture" id=1]
+[ext_resource path="res://assets/plant/stage_1/smallplant1.png" type="Texture" id=1]
 [ext_resource path="res://script/Plant.gd" type="Script" id=2]
-[ext_resource path="res://assets/smallplant4.png" type="Texture" id=3]
-[ext_resource path="res://assets/smallplant2.png" type="Texture" id=4]
-[ext_resource path="res://assets/smallplant3.png" type="Texture" id=5]
+[ext_resource path="res://assets/plant/stage_1/smallplant4.png" type="Texture" id=3]
+[ext_resource path="res://assets/plant/stage_1/smallplant2.png" type="Texture" id=4]
+[ext_resource path="res://assets/plant/stage_1/smallplant3.png" type="Texture" id=5]
+[ext_resource path="res://assets/plant/stage_2/plantstage2_1.png" type="Texture" id=6]
+[ext_resource path="res://assets/plant/stage_2/plantstage2_4.png" type="Texture" id=7]
+[ext_resource path="res://assets/plant/stage_2/plantstage2_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/plant/stage_2/plantstage2_3.png" type="Texture" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.43706
@@ -17,6 +21,17 @@ animations = [ {
 "speed": 7.0
 } ]
 
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+} ]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 12.1204
+
 [node name="Plant" type="StaticBody2D"]
 script = ExtResource( 2 )
 
@@ -24,7 +39,19 @@ script = ExtResource( 2 )
 position = Vector2( 0, 0.115982 )
 shape = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="st1" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
+playing = true
+
+[node name="st2" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 0, -1 )
+frames = SubResource( 3 )
 frame = 3
 playing = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 4 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
