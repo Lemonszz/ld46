@@ -16,6 +16,18 @@ func _process(delta):
 	targetTime -= delta;
 	if(targetTime <= 0):
 		switch_target();
+		
+	if(velocity.x > 0):
+		$AnimatedSprite.flip_h = false;
+	elif(velocity.x < 0):
+		$AnimatedSprite.flip_h = true;
+		
+	if(velocity.length() > 0.05):
+		if($AnimatedSprite.animation != "walk"):
+			$AnimatedSprite.animation = "walk";
+	else:
+		if($AnimatedSprite.animation != "idle"):
+			$AnimatedSprite.animation = "idle";
 	
 func switch_target():
 	var s = self;
