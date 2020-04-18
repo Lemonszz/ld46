@@ -13,4 +13,5 @@ func _ready():
 
 func _on_TextureButton_pressed():
 	queue_free();
+	$"../..".journal = null;
 	pass

@@ -9,7 +9,8 @@ var growth = 0;
 
 onready var stages = [
 	$st1,
-	$st2
+	$st2,
+	$st3
 ];
 
 func _ready():
