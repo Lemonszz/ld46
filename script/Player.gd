@@ -1,4 +1,9 @@
-extends KinematicBody2D
+extends Entity
+class_name Player
+
+func _ready():
+	Global.player = self;
+	pass;
 
 func get_movement_direction():
 	var dir = Vector2();
