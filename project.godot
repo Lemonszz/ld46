@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://script/Entity.gd"
 }, {
+"base": "Reference",
+"class": "HealthBar",
+"language": "GDScript",
+"path": "res://script/Healthbar.gd"
+}, {
+"base": "StaticBody2D",
+"class": "Plant",
+"language": "GDScript",
+"path": "res://script/Plant.gd"
+}, {
 "base": "Entity",
 "class": "Player",
 "language": "GDScript",
@@ -21,6 +31,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Entity": "",
+"HealthBar": "",
+"Plant": "",
 "Player": ""
 }
 
