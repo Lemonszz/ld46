@@ -4,6 +4,7 @@ var startPos : Vector2;
 var targetPos : Vector2;
 var targetTime;
 var restrict = true;
+export var waitLength = 5;
 
 func _ready():
 	var s = self;
@@ -52,7 +53,7 @@ func switch_target():
 func get_movement_direction():
 	var s = self;
 	var t = s.get_angle_to(targetPos);
-	if(targetPos.distance_to(s.position) < 5 || Global.player.pickup == self):
+	if(targetPos.distance_to(s.position) < waitLength || Global.player.pickup == self):
 		return Vector2.ZERO;
 	
 	return Vector2(cos(t), sin(t)).normalized();
