@@ -6,10 +6,11 @@ onready var TEX_FULL = load("res://assets/pickup/bucketwater.png");
 onready var TEX_EMPTY = load("res://assets/pickup/bucketempty.png");
 
 func _process(delta):
+	var s = self;
 	if(isFull):
-		texture = TEX_FULL;
+		s.texture = TEX_FULL;
 	else:
-		texture = TEX_EMPTY;
+		s.texture = TEX_EMPTY;
 
 func can_give():
 	return isFull;

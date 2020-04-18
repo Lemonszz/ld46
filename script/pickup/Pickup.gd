@@ -1,4 +1,4 @@
-extends Sprite
+extends Node
 class_name Pickup
 
 var canPickup = false;

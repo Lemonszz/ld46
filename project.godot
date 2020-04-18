@@ -34,10 +34,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://script/Healthbar.gd"
 }, {
-"base": "Sprite",
+"base": "Node",
 "class": "Pickup",
 "language": "GDScript",
 "path": "res://script/pickup/Pickup.gd"
+}, {
+"base": "FoodPickup",
+"class": "PickupEntity",
+"language": "GDScript",
+"path": "res://PickupEntity.gd"
 }, {
 "base": "StaticBody2D",
 "class": "Plant",
@@ -81,6 +86,7 @@ _global_script_class_icons={
 "FoodPickup": "",
 "Healthbar": "",
 "Pickup": "",
+"PickupEntity": "",
 "Plant": "",
 "Player": "",
 "Quest": "",

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/Plant.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://objects/Well.tscn" type="PackedScene" id=5]
 [ext_resource path="res://script/Game.gd" type="Script" id=6]
 [ext_resource path="res://objects/RatPickup.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/ChickenPickup.tscn" type="PackedScene" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Grass"
@@ -62,3 +63,9 @@ position = Vector2( -27.5591, 27.445 )
 [node name="ui" type="CanvasLayer" parent="."]
 scale = Vector2( 2, 2 )
 transform = Transform2D( 2, 0, 0, 2, 0, 0 )
+
+[node name="PickupEntity" parent="." instance=ExtResource( 8 )]
+position = Vector2( -47.9852, 0.869026 )
+
+[node name="PickupEntity2" parent="." instance=ExtResource( 8 )]
+position = Vector2( -14.0919, -18.6226 )

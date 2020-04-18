@@ -8,7 +8,7 @@ func _ready():
 	Global.player = self;
 	QuestManager.start();
 	
-func _process(delta):
+func _process(delta):	
 	pickupDelay -= delta;
 	if(pickup && Input.is_action_just_pressed("activate") && pickupDelay <= 0):
 		remove_child(pickup);
