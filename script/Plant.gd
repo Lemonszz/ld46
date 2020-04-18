@@ -3,7 +3,7 @@ class_name Plant
 
 var health : Healthbar = Healthbar.new(100);
 var decayAmount = 1;
-var decayTimeMax = 10;
+var decayTimeMax = 2;
 var decayTime = decayTimeMax;
 var growth = 0;
 
@@ -11,6 +11,9 @@ onready var stages = [
 	$st1,
 	$st2
 ];
+
+func _ready():
+	Global.plant = self;
 
 func _process(delta):
 	decayTime -= delta;

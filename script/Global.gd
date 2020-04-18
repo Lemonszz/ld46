@@ -2,3 +2,4 @@ extends Node
 
 
 var player : Entity;
+var plant : Plant;
