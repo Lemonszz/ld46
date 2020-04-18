@@ -1,3 +1,5 @@
+extends Node;
+
 var WATER = FoodObject.new(25, 0);
 var RAT = FoodObject.new(70, 1);
 var CHICKEN = FoodObject.new(125, 2);
