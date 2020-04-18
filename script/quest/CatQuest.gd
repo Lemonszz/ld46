@@ -14,4 +14,4 @@ func get_quest_icon():
 	return load("res://assets/cat/cat.png");
 	
 func get_next():
-	return QuestManager.DOG_QUEST;
+	return QuestManager.ATTACKER_QUEST;

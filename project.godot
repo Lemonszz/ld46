@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Quest",
+"class": "AttackerQuest",
+"language": "GDScript",
+"path": "res://script/quest/AttackerQuest.gd"
+}, {
 "base": "FoodPickup",
 "class": "BucketPickup",
 "language": "GDScript",
@@ -95,6 +100,7 @@ _global_script_classes=[ {
 "path": "res://script/quest/WaterQuest.gd"
 } ]
 _global_script_class_icons={
+"AttackerQuest": "",
 "BucketPickup": "",
 "CatQuest": "",
 "ChickenQuest": "",

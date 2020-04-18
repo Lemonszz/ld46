@@ -15,3 +15,6 @@ func get_quest_icon():
 	
 func get_next():
 	return null;
+	
+func on_quest_start():
+	pass;
