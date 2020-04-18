@@ -15,7 +15,7 @@ func _process(delta):
 		$"..".add_child(pickup);
 		pickup.position = position;
 		pickup = null;
-		pickupDelay = 0.1;
+		pickupDelay = 0.3;
 	
 		
 	if(abs(velocity.length()) > 0.01):

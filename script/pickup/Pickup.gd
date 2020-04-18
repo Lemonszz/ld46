@@ -9,7 +9,7 @@ func _process(delta):
 			$"..".remove_child(self);
 			Global.player.add_child(self);
 			Global.player.pickup = self;
-			Global.player.pickupDelay = 0.1;
+			Global.player.pickupDelay = 0.3;
 			self.position = Vector2(0, -8);
 	
 func _on_Area2D_body_entered(body):
