@@ -48,6 +48,11 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://script/entity/Player.gd"
+}, {
+"base": "Sprite",
+"class": "SmokeEffect",
+"language": "GDScript",
+"path": "res://script/effect/Smoke.gd"
 } ]
 _global_script_class_icons={
 "BucketPickup": "",
@@ -57,7 +62,8 @@ _global_script_class_icons={
 "Healthbar": "",
 "Pickup": "",
 "Plant": "",
-"Player": ""
+"Player": "",
+"SmokeEffect": ""
 }
 
 [application]
