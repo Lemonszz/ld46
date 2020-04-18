@@ -15,7 +15,12 @@ _global_script_classes=[ {
 "path": "res://script/Entity.gd"
 }, {
 "base": "Reference",
-"class": "HealthBar",
+"class": "FoodObject",
+"language": "GDScript",
+"path": "res://script/FoodObject.gd"
+}, {
+"base": "Reference",
+"class": "Healthbar",
 "language": "GDScript",
 "path": "res://script/Healthbar.gd"
 }, {
@@ -31,7 +36,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Entity": "",
-"HealthBar": "",
+"FoodObject": "",
+"Healthbar": "",
 "Plant": "",
 "Player": ""
 }
@@ -45,6 +51,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://script/Global.gd"
+FoodTypes="*res://script/FoodTypes.gd"
 
 [importer_defaults]
 

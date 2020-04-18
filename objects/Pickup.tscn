@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+
+[node name="Pickup" type="Sprite"]
+position = Vector2( -0.032259, 0.135908 )
+scale = Vector2( 0.272438, 0.272438 )
+texture = ExtResource( 1 )
