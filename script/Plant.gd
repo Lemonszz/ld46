@@ -13,7 +13,9 @@ onready var stages = [
 	$st2,
 	$st3,
 	$st4,
-	$st5
+	$st5,
+	$st6,
+	$st7
 ];
 
 func _ready():

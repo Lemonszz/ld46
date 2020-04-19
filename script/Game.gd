@@ -3,7 +3,11 @@ extends Node2D
 var journal = null;
 onready var questJournal = load("res://objects/QuestJournal.tscn");
 
+func _ready():
+	VisualServer.canvas_item_set_sort_children_by_y(get_canvas_item(), true);
+
 func _process(delta):
+	$TileMap.z_index = -100;
 	if(Input.is_action_just_pressed("quest")):
 		if(journal == null):
 			var j = questJournal.instance();
