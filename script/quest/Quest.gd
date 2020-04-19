@@ -18,3 +18,6 @@ func get_next():
 	
 func on_quest_start():
 	pass;
+	
+func on_quest_end():
+	pass;

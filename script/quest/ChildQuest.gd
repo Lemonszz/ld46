@@ -16,3 +16,8 @@ func get_quest_icon():
 func get_next():
 	return QuestManager.VILLAGER_QUEST;
 
+func on_quest_end():
+	Global.music.stop();
+	Global.music.stream = NEXT_MUSIC;
+	
+var NEXT_MUSIC = load("res://assets/audio/plantbg7.wav");

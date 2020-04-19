@@ -74,6 +74,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://script/quest/HorseQuest.gd"
 }, {
+"base": "AudioStreamPlayer",
+"class": "MusicPlayer",
+"language": "GDScript",
+"path": "res://script/MusicPlayer.gd"
+}, {
 "base": "Node",
 "class": "Pickup",
 "language": "GDScript",
@@ -133,6 +138,7 @@ _global_script_class_icons={
 "FoodPickup": "",
 "Healthbar": "",
 "HorseQuest": "",
+"MusicPlayer": "",
 "Pickup": "",
 "PickupEntity": "",
 "Plant": "",

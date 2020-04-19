@@ -23,6 +23,9 @@ func complete(quest : Quest):
 		quest_change(old, current);
 				
 func quest_change(oldQuest : Quest, newQuest : Quest):
+	if(oldQuest != null):
+		oldQuest.on_quest_end();
+	
 	for i in range(Global.player.get_parent().get_node("ui").get_children().size()):
 		var n = Global.player.get_parent().get_node("ui").get_child(i);
 		if(n.is_in_group("quest_info")):
