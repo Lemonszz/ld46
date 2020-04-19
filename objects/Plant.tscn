@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://assets/plant/stage_1/smallplant1.png" type="Texture" id=1]
 [ext_resource path="res://script/Plant.gd" type="Script" id=2]
@@ -43,6 +43,7 @@
 [ext_resource path="res://assets/plant/stage_fInal/plantstagefinal_2.png" type="Texture" id=41]
 [ext_resource path="res://assets/plant/stage_9/plantstage9_1.png" type="Texture" id=42]
 [ext_resource path="res://assets/plant/stage_8/plantstage8_1.png" type="Texture" id=43]
+[ext_resource path="res://assets/audio/munch.wav" type="AudioStream" id=44]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.43706
@@ -140,51 +141,54 @@ shape = SubResource( 1 )
 
 [node name="st1" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-frame = 1
 playing = true
 
 [node name="st2" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 0, -1 )
 frames = SubResource( 3 )
+frame = 3
 playing = true
 
 [node name="st3" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 1.52593, -1.91033 )
 frames = SubResource( 4 )
+frame = 3
 playing = true
 
 [node name="st4" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 1.19493, -2.02067 )
 frames = SubResource( 5 )
+frame = 3
 playing = true
 
 [node name="st5" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 1.19493, -2.02067 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="st6" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 3.528, -5.91491 )
 frames = SubResource( 7 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="st7" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 3.528, -5.91491 )
 frames = SubResource( 8 )
+frame = 3
 playing = true
 
 [node name="st8" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( -0.926693, -7.6158 )
 frames = SubResource( 9 )
+frame = 3
 playing = true
 
 [node name="st9" type="AnimatedSprite" parent="."]
@@ -196,7 +200,7 @@ playing = true
 [node name="st10" type="AnimatedSprite" parent="."]
 position = Vector2( -0.926693, -7.6158 )
 frames = SubResource( 11 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="eprompt" parent="." instance=ExtResource( 31 )]
@@ -207,5 +211,8 @@ position = Vector2( 0, -27.3479 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 visible = false
 shape = SubResource( 12 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 44 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
