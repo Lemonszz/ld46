@@ -17,7 +17,7 @@ func get_next():
 	return null;
 	
 func on_quest_start():
-	pass;
+	Global.player.play_quest_start_sound();
 	
 func on_quest_end():
 	pass;

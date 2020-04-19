@@ -15,7 +15,10 @@ func get_quest_icon():
 
 func get_next():
 	return QuestManager.RAT_QUEST;
-	
+
+func on_quest_start():
+	pass;
+
 func on_quest_end():
 	Global.music.stop();
 	Global.music.stream = NEXT_MUSIC;

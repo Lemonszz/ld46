@@ -2,6 +2,7 @@ extends Quest;
 class_name AttackerQuest
 
 func on_quest_start():
+	.on_quest_start();
 	Global.plant.spawn_attackers(2);
 
 func get_quest_name():
