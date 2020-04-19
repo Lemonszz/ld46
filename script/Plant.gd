@@ -92,6 +92,7 @@ func feed(food : FoodObject):
 		if(floor(growth) == food.requiredSize):
 			growth += 1;
 			on_grow();
+			$AudioStreamPlayer.play();
 		return true;
 	return false;
 

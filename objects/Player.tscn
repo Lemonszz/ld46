@@ -62,7 +62,6 @@ shape = SubResource( 1 )
 position = Vector2( -0.178616, -0.476309 )
 frames = SubResource( 2 )
 animation = "Stand"
-frame = 1
 playing = true
 
 [node name="sounds_pickup" type="Node" parent="."]
