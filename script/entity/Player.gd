@@ -4,13 +4,18 @@ class_name Player
 var pickup = null;
 var pickupDelay = 0;
 var freeze = false;
+var startSoundTime = 1;
 
 func _ready():
 	Global.player = self;
 	QuestManager.start();
-	$sounds_other/bucket.play();
-	
+
 func _process(delta):	
+	if(startSoundTime > 0):
+		startSoundTime -= delta;
+		if(startSoundTime <= 0):
+			$sounds_other/bucket.play();
+	
 	pickupDelay -= delta;
 	if(pickup && Input.is_action_just_pressed("activate") && pickupDelay <= 0):
 		remove_child(pickup);

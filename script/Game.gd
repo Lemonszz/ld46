@@ -10,6 +10,7 @@ func _ready():
 
 func _process(delta):
 	$TileMap.z_index = -100;
+	$TileMap2.z_index = -99;
 	if(Input.is_action_just_pressed("quest")):
 		if(journal == null):
 			var j = questJournal.instance();
