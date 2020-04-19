@@ -43,6 +43,8 @@ func _process(delta):
 		if(n.is_in_group("attacker")):
 			scale += 0.5;
 	
+	Global.game.get_node("ui/AttackedBox").enabled = scale > 1 && !fadeAll;
+		
 	if(scale == 1 && attackersPrev != 1):
 		QuestManager.complete(QuestManager.ATTACKER_QUEST);
 	attackersPrev = scale;
