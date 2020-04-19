@@ -103,49 +103,45 @@ shape = SubResource( 1 )
 
 [node name="st1" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="st2" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 0, -1 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 
 [node name="st3" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 1.52593, -1.91033 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="st4" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 1.19493, -2.02067 )
 frames = SubResource( 5 )
-frame = 1
 playing = true
 
 [node name="st5" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 1.19493, -2.02067 )
 frames = SubResource( 6 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="st6" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 3.528, -5.91491 )
 frames = SubResource( 7 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="st7" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 3.528, -5.91491 )
 frames = SubResource( 8 )
-frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
