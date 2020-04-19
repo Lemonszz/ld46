@@ -19,7 +19,10 @@ onready var stages = [
 	$st4,
 	$st5,
 	$st6,
-	$st7
+	$st7,
+	$st8,
+	$st9,
+	$st10
 ];
 
 func _ready():
@@ -48,6 +51,7 @@ func _process(delta):
 			Global.player.position = position;
 			Global.player.freeze = true;
 			QuestManager.complete(QuestManager.YOU_QUEST);
+			feed(FoodTypes.YOU);
 			
 			for i in range(Global.game.get_node("ui").get_children().size()):
 				var n = Global.game.get_node("ui").get_children()[i];
