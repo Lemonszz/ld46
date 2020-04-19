@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://objects/PickupEntity.tscn" type="PackedScene" id=1]
 [ext_resource path="res://script/pickup/ChickenPickup.gd" type="Script" id=2]
@@ -6,7 +6,10 @@
 [ext_resource path="res://assets/chicken/chickenwalk1.png" type="Texture" id=4]
 [ext_resource path="res://assets/chicken/chickenwalk2.png" type="Texture" id=5]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="CircleShape2D" id=1]
+radius = 5.10219
+
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
@@ -23,11 +26,14 @@ animations = [ {
 scale = Vector2( 1, 1 )
 script = ExtResource( 2 )
 
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource( 1 )
+
 [node name="Sprite" parent="." index="2"]
 visible = false
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "idle"
 playing = true
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

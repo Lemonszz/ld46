@@ -62,7 +62,7 @@ position = Vector2( 36.1313, 18.1235 )
 position = Vector2( -16.757, -151.886 )
 
 [node name="Well" parent="." instance=ExtResource( 5 )]
-position = Vector2( -57.2705, -148.709 )
+position = Vector2( -12.283, -73.4225 )
 
 [node name="Pickup" parent="." instance=ExtResource( 4 )]
 position = Vector2( -20.8898, 9.68006 )
