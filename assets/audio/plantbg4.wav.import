@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/plantbg4.wav-056bf538d0b22fd3a1991ea7b2906678.sample"
+
+[deps]
+
+source_file="res://assets/audio/plantbg4.wav"
+dest_files=[ "res://.import/plantbg4.wav-056bf538d0b22fd3a1991ea7b2906678.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
