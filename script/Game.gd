@@ -1,10 +1,12 @@
 extends Node2D
+class_name Game
 
 var journal = null;
 onready var questJournal = load("res://objects/QuestJournal.tscn");
 
 func _ready():
 	VisualServer.canvas_item_set_sort_children_by_y(get_canvas_item(), true);
+	Global.game = self;
 
 func _process(delta):
 	$TileMap.z_index = -100;

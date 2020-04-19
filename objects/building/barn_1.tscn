@@ -5,8 +5,9 @@
 [node name="Building" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -1.13363, -18.0435 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-position = Vector2( 5.19371, 19.1961 )
+position = Vector2( 2.92647, 1.05815 )
 polygon = PoolVector2Array( -27.0455, -8.27046, 26.5477, -7.95643, 27.071, 12.8737, -35.1765, 12.741, -35.1765, 5.06047, -27.0455, 5.02317 )

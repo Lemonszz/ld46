@@ -3,6 +3,7 @@ class_name Player
 
 var pickup = null;
 var pickupDelay = 0;
+var freeze = false;
 
 func _ready():
 	Global.player = self;
@@ -36,6 +37,8 @@ func _process(delta):
 
 func get_movement_direction():
 	var dir = Vector2();
+	if(freeze):
+		return dir;
 	
 	if(Input.is_action_pressed("up")):
 		dir.y -= 1;

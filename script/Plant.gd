@@ -2,11 +2,15 @@ extends StaticBody2D
 class_name Plant
 
 var health : Healthbar = Healthbar.new(100);
-var decayAmount = 1;
+var decayAmount = 3;
 var decayTimeMax = 2;
 var decayTime = decayTimeMax;
 var growth = 0;
 var attackersPrev = 1;
+var playerInRange = false;
+var fadeAll = false;
+var gAl = 1.0;
+var dead = false;
 
 onready var stages = [
 	$st1,
@@ -23,8 +27,8 @@ func _ready():
 
 func _process(delta):
 	var scale = 1;
-	for i in range(get_parent().get_children().size()):
-		var n = get_parent().get_children()[i];
+	for i in range(Global.game.get_children().size()):
+		var n = Global.game.get_children()[i];
 		if(n.is_in_group("attacker")):
 			scale += 1;
 	
@@ -33,12 +37,34 @@ func _process(delta):
 	attackersPrev = scale;
 	
 	decayTime -= delta * scale;
-	if(decayTime <= 0):
+	if(decayTime <= 0 && !fadeAll):
 		health.damage(decayAmount);
 		decayTime = decayTimeMax;
+		
+	if(QuestManager.current is YouQuest && playerInRange):
+		$eprompt.visible = true;
+		if(Input.is_action_just_pressed("activate")):
+			Global.player.visible = false;
+			Global.player.position = position;
+			Global.player.freeze = true;
+			QuestManager.complete(QuestManager.YOU_QUEST);
+			
+			for i in range(Global.game.get_node("ui").get_children().size()):
+				var n = Global.game.get_node("ui").get_children()[i];
+				n.visible = false;
+			
+			fadeAll = true;	
+	else:
+		$eprompt.visible = false;
+		
+	if(fadeAll):
+		gAl -= delta;
+		Global.game.modulate = Color(1, 1, 1, gAl);
 	
 	if(health.is_dead()):
-		#Game Over
+		dead = true;
+		visible = false;
+		Global.game.get_node("ui/WinLabel").visible = true;
 		pass;
 	for i in range(stages.size()):
 		stages[i].visible = floor(growth) == i || floor(growth) >= stages.size() && i == stages.size() - 1;
@@ -64,14 +90,16 @@ func on_grow():
 func spawn_attackers(amt : int):
 	for i in range(amt):
 		var attacker = ATTACKER.instance();
-		get_parent().add_child(attacker);
+		Global.game.add_child(attacker);
 		var offX = rand_range(10, 20) * 1 if randi() % 2 == 0 else -1;
 		var offY = rand_range(10, 20) * 1 if randi() % 2 == 0 else -1;
 		attacker.position = Vector2(position.x + offX, position.y + offY);
 
 func _on_Area2D_body_entered(body):
-	if(!(body is Player)):
+	if(!(body is Player) || dead):
 		return;
+	
+	playerInRange = true;
 	
 	var pickup = Global.player.pickup;
 	if(pickup is FoodPickup):
@@ -81,3 +109,10 @@ func _on_Area2D_body_entered(body):
 				
 onready var SMOKE_EFFECT = load("res://objects/Smoke.tscn");
 onready var ATTACKER = load("res://objects/AttackingVillagerPickup.tscn");
+
+
+func _on_Area2D_body_exited(body):
+	if(!(body is Player)):
+		return;
+		
+	playerInRange = false;

@@ -13,8 +13,8 @@ func get_short_description():
 func get_quest_icon():
 	return load("res://assets/horse/horse.png");
 
-#func get_next():
-#	return QuestManager.VILLAGER_QUEST;
+func get_next():
+	return QuestManager.YOU_QUEST;
 
 func on_quest_end():
 	Global.music.stop();

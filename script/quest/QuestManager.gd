@@ -9,6 +9,7 @@ var DOG_QUEST : Quest = DogQuest.new();
 var CHILD_QUEST : Quest = ChildQuest.new();
 var VILLAGER_QUEST : Quest = AdultQuest.new();
 var HORSE_QUEST : Quest = HorseQuest.new();
+var YOU_QUEST : Quest = YouQuest.new();
 
 var current = null;
 
