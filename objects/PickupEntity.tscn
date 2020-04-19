@@ -4,10 +4,10 @@
 [ext_resource path="res://assets/chicken/chicken.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 14.4163
+radius = 8.3956
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 3.88791
+radius = 4.26843
 
 [node name="PickupEntity" type="KinematicBody2D"]
 position = Vector2( -0.032259, 0.135908 )

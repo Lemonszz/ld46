@@ -6,6 +6,8 @@ var CHICKEN_QUEST : Quest = ChickenQuest.new();
 var CAT_QUEST : Quest = CatQuest.new();
 var ATTACKER_QUEST : Quest = AttackerQuest.new();
 var DOG_QUEST : Quest = DogQuest.new();
+var CHILD_QUEST : Quest = ChildQuest.new();
+var VILLAGER_QUEST : Quest = AdultQuest.new();
 
 var current = null;
 

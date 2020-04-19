@@ -12,3 +12,6 @@ func get_short_description():
 	
 func get_quest_icon():
 	return load("res://assets/dog/dog.png");
+
+func get_next():
+	return QuestManager.CHILD_QUEST;

@@ -59,7 +59,7 @@ func get_movement_direction():
 	return Vector2(cos(t), sin(t)).normalized();
 	
 func get_food():
-	return FoodTypes.CHICKEN;
+	return FoodTypes.DOG;
 	
 func _on_Area2D_body_entered(body):
 	._on_Area2D_body_entered(body);
