@@ -46,17 +46,23 @@ margin_bottom = 9.63841
 z_index = -200
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Node2D"]
-margin_left = -34.5007
-margin_top = -37.7703
-margin_right = 116.499
-margin_bottom = 9.22967
+margin_left = -31.5107
+margin_top = -41.1265
+margin_right = 119.489
+margin_bottom = 48.8735
 custom_fonts/normal_font = ExtResource( 23 )
 bbcode_enabled = true
 bbcode_text = "
 [center][tornado radius=3 freq=6]YOU LOSE[/tornado]
+
+
+
 [shake]THE PLANT CONSUMES ALL[/shake][/center]"
 text = "
 YOU LOSE
+
+
+
 THE PLANT CONSUMES ALL"
 __meta__ = {
 "_edit_use_anchors_": false

@@ -175,6 +175,7 @@ playing = true
 visible = false
 position = Vector2( 3.528, -5.91491 )
 frames = SubResource( 7 )
+frame = 4
 playing = true
 
 [node name="st7" type="AnimatedSprite" parent="."]

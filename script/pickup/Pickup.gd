@@ -11,6 +11,11 @@ func _process(delta):
 			Global.player.pickup = self;
 			Global.player.pickupDelay = 0.3;
 			self.position = Vector2(0, -8);
+			on_pickup();
+			
+			
+func on_pickup():
+	Global.player.play_pickup_sound();
 	
 func _on_Area2D_body_entered(body):
 	if(body is Player):

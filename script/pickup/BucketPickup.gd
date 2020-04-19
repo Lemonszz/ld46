@@ -11,6 +11,12 @@ func _process(delta):
 		s.texture = TEX_FULL;
 	else:
 		s.texture = TEX_EMPTY;
+		
+func on_pickup():
+	if(QuestManager.current == QuestManager.WATER_QUEST):
+		Global.player.get_node("sounds_other/well").play();
+	else:
+		Global.player.play_pickup_sound();
 
 func can_give():
 	return isFull;

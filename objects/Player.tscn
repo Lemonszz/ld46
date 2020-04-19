@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/gunther/guntharstanding3.png" type="Texture" id=1]
 [ext_resource path="res://script/entity/Player.gd" type="Script" id=2]
@@ -11,6 +11,13 @@
 [ext_resource path="res://assets/gunther/guntharstanding2.png" type="Texture" id=9]
 [ext_resource path="res://assets/gunther/guntharstandingarmsup3.png" type="Texture" id=10]
 [ext_resource path="res://assets/gunther/guntharstandingarmsup1.png" type="Texture" id=11]
+[ext_resource path="res://assets/audio/guntharvoice/thislldo.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/audio/guntharvoice/grunt.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/audio/guntharvoice/ayup.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/audio/guntharvoice/mmm.wav" type="AudioStream" id=15]
+[ext_resource path="res://assets/audio/guntharvoice/mhm.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/audio/guntharvoice/needabucket.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/audio/guntharvoice/headtothewell.wav" type="AudioStream" id=18]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 2.46564
@@ -18,24 +25,24 @@ height = 6.25598
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "WalkArm",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "StandArm",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "WalkArm",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 7 ), ExtResource( 9 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "Stand",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "StandArm",
 "speed": 5.0
 } ]
 
@@ -51,3 +58,28 @@ frames = SubResource( 2 )
 animation = "Stand"
 frame = 2
 playing = true
+
+[node name="sounds_pickup" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="sounds_pickup"]
+stream = ExtResource( 14 )
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="sounds_pickup"]
+stream = ExtResource( 13 )
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="sounds_pickup"]
+stream = ExtResource( 16 )
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="sounds_pickup"]
+stream = ExtResource( 15 )
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="sounds_pickup"]
+stream = ExtResource( 12 )
+
+[node name="sounds_other" type="Node" parent="."]
+
+[node name="bucket" type="AudioStreamPlayer" parent="sounds_other"]
+stream = ExtResource( 17 )
+
+[node name="well" type="AudioStreamPlayer" parent="sounds_other"]
+stream = ExtResource( 18 )

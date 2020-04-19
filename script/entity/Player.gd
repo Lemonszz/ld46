@@ -8,6 +8,7 @@ var freeze = false;
 func _ready():
 	Global.player = self;
 	QuestManager.start();
+	$sounds_other/bucket.play();
 	
 func _process(delta):	
 	pickupDelay -= delta;
@@ -34,6 +35,14 @@ func _process(delta):
 			if($AnimatedSprite.animation != "Stand"):	
 				$AnimatedSprite.animation = "Stand";
 		
+
+func play_pickup_sound():
+	play_sounds($sounds_pickup);
+	
+func play_sounds(node : Node):
+	var i = rand_range(0, node.get_child_count());
+	node.get_child(i).play();
+
 
 func get_movement_direction():
 	var dir = Vector2();
