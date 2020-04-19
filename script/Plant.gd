@@ -62,9 +62,9 @@ func spawn_attackers(amt : int):
 	for i in range(amt):
 		var attacker = ATTACKER.instance();
 		get_parent().add_child(attacker);
-		var offX = rand_range(2, 4) * 1 if randi() % 2 == 0 else -1;
-		var offY = rand_range(2, 4) * 1 if randi() % 2 == 0 else -1;
-		attacker.position = Vector2(offX, offY);
+		var offX = rand_range(10, 20) * 1 if randi() % 2 == 0 else -1;
+		var offY = rand_range(10, 20) * 1 if randi() % 2 == 0 else -1;
+		attacker.position = Vector2(position.x + offX, position.y + offY);
 
 func _on_Area2D_body_entered(body):
 	if(!(body is Player)):
