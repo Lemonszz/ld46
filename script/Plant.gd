@@ -11,6 +11,8 @@ var playerInRange = false;
 var fadeAll = false;
 var gAl = 1.0;
 var dead = false;
+var canAttack = false;
+var attackTime = 0;
 
 onready var stages = [
 	$st1,
@@ -29,11 +31,17 @@ func _ready():
 	Global.plant = self;
 
 func _process(delta):
+	
+	if(canAttack && !fadeAll):
+		attackTime -= delta;
+		if(attackTime < 0):
+			spawn_attackers(rand_range(1, 2 + (growth / 2)));
+	
 	var scale = 1;
 	for i in range(Global.game.get_children().size()):
 		var n = Global.game.get_children()[i];
 		if(n.is_in_group("attacker")):
-			scale += 1;
+			scale += 0.5;
 	
 	if(scale == 1 && attackersPrev != 1):
 		QuestManager.complete(QuestManager.ATTACKER_QUEST);
@@ -92,11 +100,14 @@ func on_grow():
 		smoke.position = Vector2(-3 + rand_range(0, 6), -3 + rand_range(0, 6));
 
 func spawn_attackers(amt : int):
+	canAttack = true;
+	attackTime = rand_range(15, 30);
+	Global.player.play_attacked_sound();
 	for i in range(amt):
 		var attacker = ATTACKER.instance();
 		Global.game.add_child(attacker);
-		var offX = rand_range(10, 20) * 1 if randi() % 2 == 0 else -1;
-		var offY = rand_range(10, 20) * 1 if randi() % 2 == 0 else -1;
+		var offX = rand_range(15, 25) * 1 if randi() % 2 == 0 else -1;
+		var offY = rand_range(15, 25) * 1 if randi() % 2 == 0 else -1;
 		attacker.position = Vector2(position.x + offX, position.y + offY);
 
 func _on_Area2D_body_entered(body):

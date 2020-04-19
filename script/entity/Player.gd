@@ -41,6 +41,9 @@ func play_pickup_sound():
 	
 func play_quest_start_sound():
 	play_sounds($sounds_quest_start);
+		
+func play_attacked_sound():
+	play_sounds($sounds_attacked);
 	
 func play_sounds(node : Node):
 	var i = rand_range(0, node.get_child_count());
