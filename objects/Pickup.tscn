@@ -4,7 +4,7 @@
 [ext_resource path="res://script/pickup/Pickup.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 14.4163
+radius = 4.77231
 
 [node name="Pickup" type="Sprite"]
 position = Vector2( -0.032259, 0.135908 )

@@ -1,12 +1,4 @@
-[gd_scene load_steps=8 format=2]
-
-[ext_resource path="res://objects/PickupEntity.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/dog/dogmoves2.png" type="Texture" id=3]
-[ext_resource path="res://assets/dog/dog.png" type="Texture" id=4]
-[ext_resource path="res://assets/dog/dogmoves1.png" type="Texture" id=5]
-
-[sub_resource type="GDScript" id=2]
-script/source = "extends PickupEntity
+extends PickupEntity
 
 var startPos : Vector2;
 var targetPos : Vector2;
@@ -32,11 +24,11 @@ func _process(delta):
 		$AnimatedSprite.flip_h = true;
 		
 	if(velocity.length() > 0.05):
-		if($AnimatedSprite.animation != \"walk\"):
-			$AnimatedSprite.animation = \"walk\";
+		if($AnimatedSprite.animation != "walk"):
+			$AnimatedSprite.animation = "walk";
 	else:
-		if($AnimatedSprite.animation != \"idle\"):
-			$AnimatedSprite.animation = \"idle\";
+		if($AnimatedSprite.animation != "idle"):
+			$AnimatedSprite.animation = "idle";
 	
 func switch_target():
 	var s = self;
@@ -67,7 +59,7 @@ func get_movement_direction():
 	return Vector2(cos(t), sin(t)).normalized();
 	
 func get_food():
-	return FoodTypes.DOG;
+	return FoodTypes.ADULT;
 	
 func _on_Area2D_body_entered(body):
 	._on_Area2D_body_entered(body);
@@ -82,40 +74,6 @@ func _on_Area2D_body_exited(body):
 
 func on_eaten():
 	queue_free();
-	QuestManager.complete(QuestManager.DOG_QUEST);
+	QuestManager.complete(QuestManager.VILLAGER_QUEST);
 	if(Global.player.pickup == self):
 		Global.player.pickup = null;
-"
-
-[sub_resource type="CircleShape2D" id=3]
-radius = 8.3956
-
-[sub_resource type="SpriteFrames" id=4]
-animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-} ]
-
-[node name="PickupEntity" instance=ExtResource( 1 )]
-scale = Vector2( 1, 1 )
-script = SubResource( 2 )
-
-[node name="CollisionShape2D" parent="Area2D" index="0"]
-shape = SubResource( 3 )
-
-[node name="Sprite" parent="." index="2"]
-visible = false
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
-frames = SubResource( 4 )
-animation = "idle"
-playing = true
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
