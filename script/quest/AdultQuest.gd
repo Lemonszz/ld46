@@ -13,6 +13,6 @@ func get_short_description():
 func get_quest_icon():
 	return load("res://assets/villager/villager_2.png");
 
-#func get_next():
-#	return QuestManager.VILLAGER_QUEST;
+func get_next():
+	return QuestManager.HORSE_QUEST;
 

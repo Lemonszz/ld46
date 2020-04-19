@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/Plant.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://objects/VillagerPickup4.tscn" type="PackedScene" id=18]
 [ext_resource path="res://objects/VillagerPickup2.tscn" type="PackedScene" id=19]
 [ext_resource path="res://objects/VillagerPickup.tscn" type="PackedScene" id=20]
+[ext_resource path="res://objects/HorsePickup.tscn" type="PackedScene" id=21]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 12 )
@@ -254,3 +255,15 @@ position = Vector2( 256.941, -191.673 )
 
 [node name="Building10" parent="." instance=ExtResource( 10 )]
 position = Vector2( 264.423, -284.981 )
+
+[node name="PickupEntity38" parent="." instance=ExtResource( 21 )]
+position = Vector2( -271.992, -196.618 )
+
+[node name="PickupEntity39" parent="." instance=ExtResource( 21 )]
+position = Vector2( -297.687, -177.054 )
+
+[node name="PickupEntity40" parent="." instance=ExtResource( 21 )]
+position = Vector2( -321.923, -85.3696 )
+
+[node name="PickupEntity41" parent="." instance=ExtResource( 21 )]
+position = Vector2( -239.289, -179.682 )
