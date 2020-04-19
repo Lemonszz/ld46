@@ -47,8 +47,9 @@ func can_eat(food : FoodObject):
 func feed(food : FoodObject):
 	if(can_eat(food)):
 		health.heal(food.amount);
-		growth += 1;
-		on_grow();
+		if(floor(growth) == food.requiredSize):
+			growth += 1;
+			on_grow();
 		return true;
 	return false;
 
