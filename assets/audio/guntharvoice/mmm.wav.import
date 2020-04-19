@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mmm.wav-7f5c18d743b57ee61331cf8949729aaf.sample"
+
+[deps]
+
+source_file="res://assets/audio/guntharvoice/mmm.wav"
+dest_files=[ "res://.import/mmm.wav-7f5c18d743b57ee61331cf8949729aaf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
