@@ -172,14 +172,14 @@ position = Vector2( -250.853, -98.252 )
 [node name="PickupEntity13" parent="." instance=ExtResource( 8 )]
 position = Vector2( -189.996, -199.68 )
 
+[node name="PickupEntity17" parent="." instance=ExtResource( 15 )]
+position = Vector2( -52.5993, -272.948 )
+
+[node name="PickupEntity19" parent="." instance=ExtResource( 15 )]
+position = Vector2( -47.5317, -202.702 )
+
+[node name="PickupEntity18" parent="." instance=ExtResource( 15 )]
+position = Vector2( -190.466, -174.876 )
+
 [node name="PickupEntity16" parent="." instance=ExtResource( 15 )]
 position = Vector2( 11.2386, -254.423 )
-
-[node name="PickupEntity" parent="PickupEntity16" instance=ExtResource( 15 )]
-position = Vector2( -63.8379, -18.5256 )
-
-[node name="PickupEntity2" parent="PickupEntity16" instance=ExtResource( 15 )]
-position = Vector2( -201.705, 79.5463 )
-
-[node name="PickupEntity" parent="PickupEntity16/PickupEntity2" instance=ExtResource( 15 )]
-position = Vector2( 142.935, -27.8259 )
